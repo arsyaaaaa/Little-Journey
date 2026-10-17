@@ -1,14 +1,518 @@
-index.html
-!
+
 <!DOCTYPE html>
 <html lang="id">
-<head aiueo>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aiueo</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Journey 💙</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #eff7ff;
+    color: #304b70;
+    text-align: center;
+}
+
+header {
+    padding: 22px 12px;
+    background: #c9e3ff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 3px 15px #729fc522;
+}
+
+header h2 {
+    color: #24558a;
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav button {
+    border: 1px solid #d8eaff;
+    padding: 9px 13px;
+    border-radius: 25px;
+    background: white;
+    color: #24558a;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    background: #5b9de0;
+    color: white;
+}
+
+section {
+    display: none;
+    min-height: 80vh;
+    padding: 50px 18px;
+    animation: muncul 0.5s;
+}
+
+section.active {
+    display: block;
+}
+
+h1 {
+    font-size: clamp(30px, 6vw, 48px);
+    color: #3679bd;
+    margin: 20px 0;
+}
+
+h2 {
+    color: #3679bd;
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.9;
+    max-width: 600px;
+    margin: 15px auto;
+}
+
+.btn {
+    padding: 12px 22px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    background: #5b9de0;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #24558a;
+    transform: translateY(-2px);
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 22px auto;
+    box-shadow: 0 5px 20px #8ab9e833;
+    border: 1px solid #d8eaff;
+}
+
+.hero {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    background: linear-gradient(180deg, #d9ecff, #eff7ff);
+}
+
+.heart {
+    font-size: 42px;
+    animation: detak 1.5s infinite;
+}
+
+.photo {
+    width: 100%;
+    max-width: 350px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 10px auto;
+    display: block;
+    background: #dceeff;
+}
+
+textarea {
+    width: 100%;
+    max-width: 350px;
+    padding: 12px;
+    border: 1px solid #b7d7f8;
+    background: #f7fbff;
+    color: #304b70;
+    border-radius: 10px;
+    font-family: Georgia, serif;
+    resize: vertical;
+}
+
+input {
+    margin: 15px;
+    max-width: 90%;
+}
+
+iframe {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 15px;
+}
+
+footer {
+    padding: 22px;
+    background: #c9e3ff;
+    color: #24558a;
+}
+
+.small {
+    font-size: 13px;
+    color: #6684a6;
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes detak {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 35px 14px;
+    }
+
+    nav button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .card {
+        padding: 17px;
+    }
+}
+</style>
+</head>
+
 <body>
-    </h1><halo dunia></halo>
-    <p></p> "aku arsya"
+
+<header>
+    <h2>♡ Our Little Journey ♡</h2>
+    <nav>
+        <button onclick="buka('home')">Home</button>
+        <button onclick="buka('story')">Our Story</button>
+        <button onclick="buka('memories')">Memories</button>
+        <button onclick="buka('letters')">Letters</button>
+        <button onclick="buka('music')">Playlist</button>
+        <button onclick="buka('surprise')">Surprise 🎁</button>
+    </nav>
+</header>
+
+<section id="home" class="active hero">
+    <div class="heart">💙</div>
+    <p>✧ a little Journey made just for you ✧</p>
+    <h1>Hi, Sayang!</h1>
+    <p>
+        Di antara luasnya semesta dan miliaran manusia,
+        aku bersyukur karena salah satu takdir terindah
+        membawaku untuk mengenalmu.
+    </p>
+    <p>
+        Website kecil ini mungkin sederhana,
+        tetapi setiap bagiannya kubuat dengan satu orang
+        yang selalu ingin kuberi senyum: kamu.
+    </p>
+    <button class="btn" onclick="buka('story')">
+        Mulai perjalanan kita ♡
+    </button>
+</section>
+
+
+<section id="story">
+    <h1>Our Story 🌙</h1>
+    <p>Setiap kisah punya awal, dan ini adalah halaman kecil tentang kita.</p>
+
+    <div class="card">
+        <h2>Awal dari Segalanya</h2>
+        <p>
+            Aku nggak tahu bagaimana cerita kita akan berjalan,
+            tetapi aku senang karena pernah menemukan seseorang
+            yang membuat hari-hari biasa terasa lebih istimewa.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Hal Sederhana tentang Kita</h2>
+        <p>
+            Bukan cuma tentang momen besar atau kata-kata manis.
+            Terkadang, kebahagiaan justru tinggal dalam obrolan kecil,
+            tawa sederhana, dan perhatian yang tulus.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Harapanku</h2>
+        <p>
+            Aku nggak berharap kita selalu sempurna.
+            Aku hanya berharap kita mau saling mendengar,
+            saling memahami, dan bertumbuh bersama.
+        </p>
+    </div>
+</section>
+
+<!-- MEMORIES -->
+
+<!-- MEMORIES -->
+<section id="memories">
+    <h1>Our Memories 📸</h1>
+    <p>
+        Potongan kecil dari cerita kita,
+        disimpan sebagai kenangan yang ingin selalu kuingat.
+    </p>
+
+    <div class="card">
+        <img src="MONGKRANG.jpeg" class="photo" alt="Kenangan pertama kita">
+        <h2>Our First Memory 💙</h2>
+        <p>
+            sebuah momen pendakian sederhana 
+            yang membuat kita jatuh cinta,
+            yang diselimuti oleh bukit mongkrang
+            dan diikuti oleh adek adek rese yang bikin kamu takut
+        </p>
+    </div>
+
+    <div class="card">
+        <img src="KOPKEN.jpeg" class="photo" alt="Kenangan kedua kita">
+        <h2>A Little Happiness ☁️</h2>
+        <p>
+            kebahagiaan sederhana yang muncul
+            dikala kita menikmati kopi berdua,  
+            diantara ramainya kopken kala itu 
+            ada rindu yang menghilang ditelan 
+            oleh perasaaan cinta kita berdua
+        </p>
+    </div>
+
+    <div class="card">
+        <img src="POTOBUT.jpeg" class="photo" alt="Kenangan ketiga kita">
+        <h2>My Favorite Moments 🌙</h2>
+        <p>
+            our first photobooth, 
+            foto yang menggambarkan betapa
+            besar cinta yang kita miliki, 
+            betapa senangnya jika kita bersama,  
+            foto yang akan selalu abadi dan
+            yang akan selalu terkenang
+        </p>
+    </div>
+
+    <div class="card">
+        <img src="COKLAT.jpeg" class="photo" alt="Kenangan ketiga kita">
+        <h2>Random Moments</h2>
+        <p>
+            foto random yang ditangkap
+            oleh iphone 11 di coklat malam itu, 
+            dikala malam mulai gelap
+            dan mata mulai sayu
+            tetapi kita selalu bersatu dan 
+            selalu bersama
+        </p>
+    </div>
+
+    <div class="card">
+        <img src="ES KLIM.jpeg" class="photo" alt="Kenangan ketiga kita">
+        <h2>Favorite Photos</h2>
+        <p>
+            foto yang ditangkap di
+            17'ice cream tugu kala itu, 
+            foto yang mengharuskan kita
+            untuk mengantre dibelakang 
+            pelanggan lainnya untuk berfoto, 
+            foto yang dimana kita dulu malu 
+            untuk memotret saking banyak nya 
+            yang melihat kita, 
+            alhasil kita mengalihkannya dengan membua vlog ala ala
+        </p>
+    </div>
+</section>
+
+
+<!-- LETTERS -->
+<section id="letters">
+    <h1>Letters for You 💌</h1>
+    <p>Ada beberapa kalimat yang ingin kusampaikan kepadamu.</p>
+
+    <div class="card">
+        <h2>Surat Pertama 💙</h2>
+        <p class="small">kehadiranmu</p>
+        <button class="btn" onclick="surat(1)">Buka surat</button>
+        <p id="surat1" hidden>
+            kau datang tatkala sinar senjaku telah redup, tetapi kau datang membawa sebilah cahaya untuk menyalakan sinarku kembali, aku bersyukur bisa bertemu orang seperti kamu sayangg
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Surat Kedua 🌷</h2>
+        <p class="small">Tentang kita</p>
+        <button class="btn" onclick="surat(2)">Buka surat</button>
+        <p id="surat2" hidden>
+            kita kenal tanpa sengaja waktu event oren kala itu, lalu kita main dan lama kelamaan kita dekat, sampai akhirnya kita bisa sampai sekarangg, bisa melewati segalanya dan membuatnya lebih indah
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Surat Ketiga ✨</h2>
+        <p class="small">Tentang masa depan</p>
+        <button class="btn" onclick="surat(3)">Buka surat</button>
+        <p id="surat3" hidden>
+            aku nggak bisa menjanjikan bahwa setiap hari akan mudah.
+            Namun, aku ingin belajar menjadi seseorang yang lebih baik,
+            bukan hanya untuk diriku sendiri, tetapi juga untuk
+            hubungan yang sedang kita jaga bersama.
+        </p>
+    </div>
+</section>
+
+<!-- PLAYLIST -->
+
+
+<!-- PLAYLIST -->
+<section id="music">
+    <h1>Our Playlist 🎵</h1>
+    <p>
+        Dua lagu, dua cerita, dan banyak kenangan
+        yang ingin kita simpan bersama. 💙
+    </p>
+
+    <div class="card">
+        <h2>Lagu yang Menggambarkan Cerita Kita</h2>
+
+        <iframe
+            src="https://www.youtube.com/embed/WhEUZrB2Osc"
+            title="Lagu yang menggambarkan cerita kita"
+            allow="encrypted-media; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+
+        <p>
+            Lagu ini akan selalu punya tempat
+            di cerita kita. 💙
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Lagu Kita Saat Ini</h2>
+
+        <iframe
+            src="https://www.youtube.com/embed/LcwkBM1y3ec"
+            title="Lagu kita saat ini"
+            allow="encrypted-media; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+
+        <p>
+            Kita telah melewati masa-masa sulit bersama.
+            Semoga lagu ini mengingatkan kita
+            pada perjalanan yang sudah kita lalui.
+        </p>
+    </div>
+</section>
+
+
+
+
+<!-- SURPRISE -->
+<section id="surprise">
+    <h1>One Last Thing 🎁</h1>
+    <div class="heart">💙</div>
+    <p>
+        Sebelum kamu pergi dari halaman ini,
+        ada satu pesan kecil yang ingin kusampaikan.
+    </p>
+
+    <button class="btn" onclick="kejutan()">
+        Buka kejutanmu ♡
+    </button>
+
+    <div class="card" id="pesanKejutan" hidden>
+        <h2>For You, My Favorite Person 💙</h2>
+        <p>
+            Kalau semesta adalah buku yang tak berujung,
+            aku bersyukur pernah menemukan halaman
+            yang memperkenalkanku kepadamu.
+        </p>
+        <p>
+            Terima kasih sudah menjadi bagian dari ceritaku.
+            Semoga kita selalu punya alasan untuk tersenyum,
+            belajar, dan menghargai satu sama lain.
+        </p>
+        <p>With love, arsya. ♡</p>
+    </div>
+</section>
+
+<footer>
+    <p>Made with love, just for you 💙</p>
+    <p class="small">Our Little Journey · A story made by two hearts</p>
+</footer>
+
+<script>
+function buka(id) {
+    document.querySelectorAll("section").forEach(function(halaman) {
+        halaman.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function surat(nomor) {
+    const isi = document.getElementById("surat" + nomor);
+    isi.hidden = !isi.hidden;
+}
+
+function kejutan() {
+    document.getElementById("pesanKejutan").hidden = false;
+}
+
+document.getElementById("pilihFoto").addEventListener("change", function(event) {
+    const galeri = document.getElementById("galeri");
+    galeri.innerHTML = "";
+
+    Array.from(event.target.files).forEach(function(file) {
+        if (!file.type.startsWith("image/")) return;
+
+        const pembaca = new FileReader();
+
+        pembaca.onload = function(e) {
+            const kartu = document.createElement("div");
+            kartu.className = "card";
+
+            const foto = document.createElement("img");
+            foto.className = "photo";
+            foto.src = e.target.result;
+            foto.alt = "Kenangan kita";
+
+            const deskripsi = document.createElement("textarea");
+            deskripsi.placeholder = "Tulis cerita di balik foto ini...";
+
+            kartu.appendChild(foto);
+            kartu.appendChild(deskripsi);
+            galeri.appendChild(kartu);
+        };
+
+        pembaca.readAsDataURL(file);
+    });
+});
+</script>
 
 </body>
 </html>
